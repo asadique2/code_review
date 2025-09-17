@@ -4,11 +4,6 @@ void main() {
   runApp(const MyApp());
 }
 
-/// ❌ Code Smell: Long, unused comments and magic numbers
-/// ❌ Code Smell: Duplicate methods and redundant logic
-/// ❌ Code Smell: Dead code (unused functions)
-/// ❌ Code Smell: Hardcoded strings instead of constants
-/// ❌ Code Smell: Duplicate widgets
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -42,21 +37,20 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  // ❌ Duplicate method doing the same thing (duplication)
+
   void _increaseCounter() {
     setState(() {
       _counter++;
     });
   }
 
-  // ❌ Dead code (never used anywhere)
   void _unusedMethod() {
     print("This is unused");
   }
 
   @override
   Widget build(BuildContext context) {
-    // ❌ Bad practice: Inline duplicate widgets instead of reusing
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red, // hardcoded again
@@ -74,16 +68,27 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
 
-            // Duplicate widget 2 (exact same code, duplication)
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
 
-            // ❌ Magic number (instead of constant)
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+
+
             SizedBox(height: 37),
 
-            // ❌ Hardcoded repeated text
             const Text("Hello World"),
             const Text("Hello World"),
           ],
